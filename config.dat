@@ -1,0 +1,6 @@
+DEFDAT config_params
+ REAL grip_force = 30.0
+ REAL lift_height = 50.0
+ INT   speed_pick = 100
+ INT   speed_move = 150
+ENDDAT
