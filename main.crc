@@ -1,0 +1,32 @@
+
+
+INCLUDE "grab_drop.dat"
+INCLUDE "config.dat"
+
+DEF Main()
+ ; Инициализация на Tool и Base
+ TOOL = TOOL1
+ BASE = BASE1
+ $VEL.CP = speed_move
+ $ACC.CP = 500
+
+ ; Премини към позиция за вземане
+ PTP P_PICK
+ ; Вземане на обекта
+ ; Команда за щипка (grip) с сила grip_force
+ WAIT SEC 1
+
+ ; Повдигане
+ LIN P_PICK OFFSET {Z lift_height}
+ WAIT SEC 0.5
+
+ ; Придвижване към позиция за пускане
+ LIN P_DROP
+ WAIT SEC 1
+ ; Пускане на обекта
+ ; Команда за отпускане на щипката
+
+ ; Връщане в начална позиция
+ PTP HOME
+
+END
